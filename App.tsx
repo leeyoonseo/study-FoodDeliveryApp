@@ -21,22 +21,21 @@ function HomeScreen({navigation}: HomeScreenProps) {
 
   return (
     <>
-      <View 
+      <View
         style={{
-          backgroundColor: 'yellow', 
-          flex: 1, 
-          alignItems: 'flex-end', 
-          justifyContent: 'center'
+          backgroundColor: 'yellow',
+          flex: 1,
+          alignItems: 'flex-end',
+          justifyContent: 'center',
         }}>
-        <Pressable 
+        <Pressable
           style={{
-            margin: 20, 
-            padding: 20, 
-            backgroundColor: 'blue', 
-            borderRadius: 20
+            margin: 20,
+            padding: 20,
+            backgroundColor: 'blue',
+            borderRadius: 20,
           }}
-          onPress={onClick} 
-        >
+          onPress={onClick}>
           <Text style={{color: '#fff'}}>Home Screen</Text>
         </Pressable>
       </View>
