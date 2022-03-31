@@ -86,15 +86,14 @@ function SignIn({navigation}: SignInScreenProps) {
           style={
             !canGoNext
               ? styles.loginButton
-              : // : [styles.loginButton, styles.loginButtonActive]
-                StyleSheet.compose(styles.loginButton, styles.loginButtonActive)
+              : StyleSheet.compose(styles.loginButton, styles.loginButtonActive)
           }
           onPress={onSubmit}
           disabled={!canGoNext}>
           <Text style={styles.loginButtonText}>로그인</Text>
         </Pressable>
-        <Pressable style={styles.loginButton} onPress={toSignUp}>
-          <Text style={styles.loginButtonText}>회원가입</Text>
+        <Pressable onPress={toSignUp}>
+          <Text>회원가입</Text>
         </Pressable>
       </View>
     </DismissKeyboardView>
