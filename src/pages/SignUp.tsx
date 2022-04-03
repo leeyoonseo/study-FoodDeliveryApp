@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import axios, {AxiosError} from 'axios';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../App';
+import {RootStackParamList} from '../../AppInner';
 import DismissKeyboardView from '../components/DismissKeyboardView';
 import Config from 'react-native-config';
 
@@ -87,7 +87,7 @@ function SignUp({navigation}: SignUpScreenProps) {
     } finally {
       setLoading(false);
     }
-  }, [loading, email, name, password]);
+  }, [loading, email, name, password, navigation]);
 
   const canGoNext = email && name && password;
   return (
