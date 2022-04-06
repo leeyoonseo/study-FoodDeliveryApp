@@ -1,13 +1,12 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   name: '',
   email: '',
-  money: 0,
   accessToken: '',
   refreshToken: '',
+  money: 0,
 };
-
 const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -18,20 +17,14 @@ const userSlice = createSlice({
       state.accessToken = action.payload.accessToken;
       state.refreshToken = action.payload.refreshToken;
     },
-    setName(state, action) {
-      state.name = action.payload;
-    },
-    setEmail(state, action) {
-      state.email = action.payload;
-    },
-    setMoney(state, action: PayloadAction<number>) {
-      state.money = action.payload;
-    },
     setAccessToken(state, action) {
       state.accessToken = action.payload;
     },
+    setMoney(state, action) {
+      state.money = action.payload;
+    },
   },
-  // extraReducers: builder => {}, // 비동기 함수
+  extraReducers: builder => {},
 });
 
 export default userSlice;
