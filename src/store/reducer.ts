@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
-import orderSlice from '../slices/order';
+
 import userSlice from '../slices/user';
+import orderSlice from '../slices/order';
 
 const rootReducer = combineReducers({
   user: userSlice.reducer,

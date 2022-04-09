@@ -9,9 +9,9 @@ import {RootState} from '../store/reducer';
 import EncryptedStorage from 'react-native-encrypted-storage';
 
 function Settings() {
-  const name = useSelector((state: RootState) => state.user.name);
-  const money = useSelector((state: RootState) => state.user.money);
   const accessToken = useSelector((state: RootState) => state.user.accessToken);
+  const money = useSelector((state: RootState) => state.user.money);
+  const name = useSelector((state: RootState) => state.user.name);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function Settings() {
         {},
         {
           headers: {
-            authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           },
         },
       );
@@ -58,13 +58,12 @@ function Settings() {
       <View style={styles.money}>
         <Text style={styles.moneyText}>
           {name}님의 수익금{' '}
-          <Text style={styles.moneyValue}>
+          <Text style={{fontWeight: 'bold'}}>
             {money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
           </Text>
           원
         </Text>
       </View>
-
       <View style={styles.buttonZone}>
         <Pressable
           style={StyleSheet.compose(
@@ -86,9 +85,6 @@ const styles = StyleSheet.create({
   moneyText: {
     fontSize: 16,
   },
-  moneyValue: {
-    fontWeight: 'bold',
-  },
   buttonZone: {
     alignItems: 'center',
     paddingTop: 20,
@@ -108,4 +104,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
 export default Settings;
