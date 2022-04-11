@@ -86,8 +86,8 @@ function Ing({navigation}: IngScreenProps) {
             <Path
               coordinates={[
                 {
-                  latitude: myPosition.latitude,
                   longitude: myPosition.longitude,
+                  latitude: myPosition.latitude,
                 },
                 {latitude: start.latitude, longitude: start.longitude},
               ]}
